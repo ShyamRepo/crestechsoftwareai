@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crestech Software AI | Intelligent QA & Automation Agents</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f6f8fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0b1f3a, #1155cc);
+      color: #fff;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      background: linear-gradient(135deg, #0b1f3a, #1b75ff);
+      color: white;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #dce8ff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      background: #00d4ff;
+      color: #001b33;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .agent-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .chat-line {
+      background: rgba(255,255,255,0.18);
+      padding: 14px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    section {
+      padding: 75px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      color: #1155cc;
+      margin-bottom: 12px;
+    }
+
+    .workflow {
+      background: #eef4ff;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .step {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    }
+
+    .step span {
+      display: inline-block;
+      width: 42px;
+      height: 42px;
+      line-height: 42px;
+      border-radius: 50%;
+      background: #1155cc;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .dashboard {
+      background: #0b1f3a;
+      color: #fff;
+    }
+
+    .dashboard .section-title h2 {
+      color: #fff;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.1);
+      padding: 28px;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .metric h3 {
+      font-size: 34px;
+      color: #00d4ff;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #1155cc, #00a8e8);
+      color: #fff;
+      border-radius: 28px;
+      margin: 70px 8%;
+      padding: 60px 30px;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: #071527;
+      color: #c9d6e8;
+      padding: 35px 8%;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 6%;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Crestech Software AI</div>
+    <nav>
+      <a href="#agents">Agents</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>AI Agents for QA, Automation & Enterprise Delivery</h1>
+      <p>
+        Crestech Software AI helps teams convert requirements into test cases,
+        automation scripts, execution reports, and business-ready insights using intelligent AI agents.
+      </p>
+      <a class="btn" href="#contact">Request Demo</a>
+      <a class="btn secondary" href="#workflow">View Workflow</a>
+    </div>
+
+    <div class="agent-card">
+      <div class="chat-line"><strong>User:</strong> Upload Adobe Illustrator requirement document.</div>
+      <div class="chat-line"><strong>AI Agent:</strong> Requirement analyzed successfully.</div>
+      <div class="chat-line"><strong>AI Agent:</strong> Generated 45 test cases and 12 automation scenarios.</div>
+      <div class="chat-line"><strong>AI Agent:</strong> Playwright script ready. Jira and Slack updates prepared.</div>
+    </div>
+  </section>
+
+  <section id="agents">
+    <div class="section-title">
+      <h2>AI Agent Capabilities</h2>
+      <p>Built for QA managers, automation architects, delivery leaders, and enterprise teams.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Requirement Analyzer</h3>
+        <p>Reads BRD, SOW, user stories, and acceptance criteria to identify test scope and risks.</p>
+      </div>
+      <div class="card">
+        <h3>Test Case Generator</h3>
+        <p>Creates functional, regression, integration, and edge-case test scenarios automatically.</p>
+      </div>
+      <div class="card">
+        <h3>Automation Script Agent</h3>
+        <p>Generates Playwright, Selenium, or API automation scripts from test scenarios.</p>
+      </div>
+      <div class="card">
+        <h3>Defect Intelligence</h3>
+        <p>Analyzes failures, logs, screenshots, and suggests probable root cause.</p>
+      </div>
+      <div class="card">
+        <h3>CI/CD Test Execution</h3>
+        <p>Integrates with GitHub Actions, Jenkins, and n8n to trigger automated validation.</p>
+      </div>
+      <div class="card">
+        <h3>Reporting Agent</h3>
+        <p>Generates executive QA summaries, release readiness reports, and Slack/Jira updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow" id="workflow">
+    <div class="section-title">
+      <h2>How the AI Agent Works</h2>
+      <p>End-to-end intelligent QA workflow from requirement to reporting.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span>1</span><h4>Upload Requirement</h4><p>BRD, SOW, user story, or PDF.</p></div>
+      <div class="step"><span>2</span><h4>AI Analysis</h4><p>Scope, risk, test coverage.</p></div>
+      <div class="step"><span>3</span><h4>Generate Tests</h4><p>Manual and automation cases.</p></div>
+      <div class="step"><span>4</span><h4>Execute Scripts</h4><p>Playwright / CI pipeline.</p></div>
+      <div class="step"><span>5</span><h4>Report & Notify</h4><p>Slack, Jira, email, dashboard.</p></div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Enterprise AI QA Services</h2>
+      <p>Designed for software testing, automation, and delivery transformation.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>AI-Powered QA Transformation</h3>
+        <p>Adopt AI across test planning, design, automation, reporting, and decision-making.</p>
+      </div>
+      <div class="card">
+        <h3>Automation Framework Setup</h3>
+        <p>Create scalable frameworks aligned with CI/CD, GitHub, Jenkins, and cloud pipelines.</p>
+      </div>
+      <div class="card">
+        <h3>n8n Workflow Automation</h3>
+        <p>Connect AI agents with Slack, Jira, GitHub, Google Drive, and internal systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard">
+    <div class="section-title">
+      <h2>Demo Dashboard Metrics</h2>
+      <p>Sample AI agent output for QA leadership visibility.</p>
+    </div>
+
+    <div class="grid">
+      <div class="metric"><h3>92%</h3><p>Automation Readiness</p></div>
+      <div class="metric"><h3>45</h3><p>Generated Test Cases</p></div>
+      <div class="metric"><h3>12</h3><p>Automation Scenarios</p></div>
+      <div class="metric"><h3>8</h3><p>Risk Areas Identified</p></div>
+      <div class="metric"><h3>3</h3><p>Failed Test Insights</p></div>
+      <div class="metric"><h3>100%</h3><p>Slack/Jira Notification Ready</p></div>
+    </div>
+  </section>
+
+  <div class="cta" id="contact">
+    <h2>Start Your AI QA Agent Demo</h2>
+    <p>Experience intelligent test design, automation, execution, and reporting with Crestech Software AI.</p>
+    <br />
+    <a class="btn" href="mailto:info@crestechsoftwareai.com">Contact Us</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Crestech Software AI. Demo website for AI Agent, QA Automation, and Enterprise Workflow Intelligence.</p>
+    <p>Domain: crestechsoftwareai.com</p>
+  </footer>
+</body>
+</html>
